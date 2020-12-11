@@ -16,6 +16,17 @@ namespace Cafe_UnitTestProject1
 
             string expected = "Sandwich";
             string actual = content.NameOfMeal;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void SetMealNumber_ShouldSetCorrectInt()
+        {
+            Menu content = new Menu();
+            content.MealNumber = 1;
+            int expected = 1;
+            int actual = content.MealNumber;
+            Assert.AreEqual(expected, actual);
         }
     }
 }
