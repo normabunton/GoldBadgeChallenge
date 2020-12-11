@@ -76,37 +76,17 @@ namespace _1.CafeConsoleApp
             _menuItems.AddItemToMenu(newItem);
             Console.WriteLine("You successfully added a new Menu Item.");
             Console.ReadKey();
-
-            //Menu newMenu = new Menu();
-
-            //Console.WriteLine("Enter the New Meal Number you would like to use:");
-            //string mealNumberAsString = Console.ReadLine();
-            //newMenu.mealNumberAsString = double.Parse(mealNumberAsString);
-
-            //Console.WriteLine("Enter the Name of the Meal:");
-            //newMenu.NameOfMeal = Console.ReadLine();
-
-            //Console.WriteLine("Enter the Meal Desciption:");
-            //newMenu.MealDescription = Console.ReadLine();
-
-            //Console.WriteLine("Enter the Ingredients for this meal");
-            //newMenu.Ingredients = Console.ReadLine();
-
-            //Console.WriteLine("Enter the Price for this Meal(4.99, 5.99, 6.99, 7.99 etc):"); 
-            //string priceAsString = Console.ReadLine();
-            //newMenu.priceAsString = double.Parse(priceAsString);
         }
 
-        private void RemoveItemFromMenu()                                                       //Delete MenuItems//////////////////////////
+        private void RemoveItemFromMenu()                                                    
         {
             Console.Clear();
             DisplayAllMenuItems();
             //Get the MEalNumber
             Console.WriteLine("Enter the Meal Number you would like to Remove:");
-            int mealNumber = Convert.ToInt32(Console.ReadLine(input));
-        
+            int menuItem = Convert.ToInt32(Console.ReadLine());        
             //Call the delete method
-            bool wasDeleted = _menuItems.RemoveItemFromMenu(input);
+            bool wasDeleted = _menuItems.RemoveItemFromMenu(menuItem);
             //If the item was deleted say so
             if (wasDeleted)
             {
@@ -130,7 +110,14 @@ namespace _1.CafeConsoleApp
         }
         private void SeeMenuItems()
         {
-            Menu One = new Menu(1, "Sandwich", "Chicken", "chicken, mayo, lettuce", 5.99);
+            Menu Item1 = new Menu(1, "Sandwich", "Chicken Sandwich", "chicken, mayo, lettuce", 5.99);
+            Menu Item2 = new Menu(2, "Soup", "Vegetable Soup", "veggies, broth", 4.99);
+            Menu Item3 = new Menu(3, "Salad", "House Salad", "Lettuce, Tomatoes, Cheese, Dressing", 3.99);
+
+            _menuItems.AddItemToMenu(Item1);
+            _menuItems.AddItemToMenu(Item2);
+            _menuItems.AddItemToMenu(Item3);
+            
         }
     }
 }

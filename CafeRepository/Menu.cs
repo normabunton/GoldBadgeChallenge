@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CafeRepository
 {
-    public class Menu
+    public class Menu         //POCO
     {
         public int MealNumber { get; set; }
         public string NameOfMeal { get; set; }
         public string MealDescription { get; set; }
         public string Ingredients { get; set; }
         public double Price { get; set; }
-        public Menu() { }                                                                                           //empty constructor
-        public Menu(int mealNumber, string nameOfMeal, string mealDescription, string ingredients, double price) //constructors with parameters
+        public Menu() { }                                                                                         
+        public Menu(int mealNumber, string nameOfMeal, string mealDescription, string ingredients, double price) 
         {
             MealNumber = mealNumber;
             NameOfMeal = nameOfMeal;

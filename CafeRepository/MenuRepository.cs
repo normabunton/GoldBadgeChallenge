@@ -35,7 +35,7 @@ namespace CafeRepository
                 return false;
             }
         }
-        private Menu GetMenuItemByMealNumber(int mealNumber) //HelperMethod
+        public Menu GetMenuItemByMealNumber(int mealNumber) //HelperMethod
         {
             foreach (Menu menuItems in _menuItems)
             {
