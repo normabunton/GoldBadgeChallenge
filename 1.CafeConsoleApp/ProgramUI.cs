@@ -22,7 +22,7 @@ namespace _1.CafeConsoleApp
             {                //Display options to the user
                 Console.WriteLine("Select a menu option:\n" +
                                     "1. Create a new Menu Item\n" +
-                                    "2. Delete a Menu Item\n" +
+                                    "2. Remove a Menu Item\n" +
                                     "3. Diplay All Menu Items\n" +
                                     "4. Exit");
                 //get the input
@@ -34,7 +34,7 @@ namespace _1.CafeConsoleApp
                         CreateNewMenuItem();
                         break;
                     case "2":
-                        DeleteMenuItems();
+                        RemoveItemFromMenu();
                         break;
                     case "3":
                         DisplayAllMenuItems();
@@ -97,13 +97,40 @@ namespace _1.CafeConsoleApp
             //newMenu.priceAsString = double.Parse(priceAsString);
         }
 
-        private void DeleteMenuItems()                                                       //Delete MenuItems//////////////////////////
+        private void RemoveItemFromMenu()                                                       //Delete MenuItems//////////////////////////
         {
-
+            Console.Clear();
+            DisplayAllMenuItems();
+            //Get the MEalNumber
+            Console.WriteLine("Enter the Meal Number you would like to Remove:");
+            int mealNumber = Convert.ToInt32(Console.ReadLine(input));
+        
+            //Call the delete method
+            bool wasDeleted = _menuItems.RemoveItemFromMenu(input);
+            //If the item was deleted say so
+            if (wasDeleted)
+            {
+                Console.WriteLine("The Menu Item was Successfully Removed.");
+            }
+            //otherwise  state it could not be deleted
+            else
+            {
+                Console.WriteLine("The Menu Item was not Removed.");
+            }
         }
         private void DisplayAllMenuItems()                                                  //Display/View All MenuItems/////////////////////////////
         {
-
+            Console.Clear();
+            List<Menu> listOfMenuItems = _menuItems.GetMenuItems();
+            foreach (Menu menuItems in listOfMenuItems)
+            {
+                Console.WriteLine($"Meal Number: {menuItems.MealNumber}\n" +
+                                    $"Name Of Meal: {menuItems.NameOfMeal}");
+            }
+        }
+        private void SeeMenuItems()
+        {
+            Menu One = new Menu(1, "Sandwich", "Chicken", "chicken, mayo, lettuce", 5.99);
         }
     }
 }
