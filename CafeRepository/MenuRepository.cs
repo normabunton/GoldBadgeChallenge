@@ -17,15 +17,11 @@ namespace CafeRepository
         {
             return _menuItems;
         }
-        public bool RemoveItemFromMenu(int mealNumber)        //delete menu items
+        public bool RemoveItemFromMenu(string menuItem)        //delete menu items
         {
-            Menu menuItem = GetMenuItemByMealNumber(mealNumber);
-            if (menuItem == null)
-            {
-                return false;
-            }
             int initialCount = _menuItems.Count;
-            _menuItems.Remove(menuItem);
+            Menu deletedItem = GetMenuItemByMealNumber(menuItem);
+            _menuItems.Remove(deletedItem);
             if (initialCount > _menuItems.Count)
             {
                 return true;
@@ -35,7 +31,7 @@ namespace CafeRepository
                 return false;
             }
         }
-        public Menu GetMenuItemByMealNumber(int mealNumber) //HelperMethod
+        public Menu GetMenuItemByMealNumber(string mealNumber) //HelperMethod
         {
             foreach (Menu menuItems in _menuItems)
             {

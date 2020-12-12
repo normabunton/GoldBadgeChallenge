@@ -1,32 +1,36 @@
-﻿using CafeRepository;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿//using CafeRepository;
+//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using System;
 
-namespace Cafe_UnitTestProject1
-{
-    [TestClass]
-    public class CafeUnitTests
-    {
-        [TestMethod]
-        public void SetNameOfMeal_ShoudlSetCorrectString()
-        {
-            Menu content = new Menu();
+//namespace Cafe_UnitTestProject1
+//{
+    //[TestClass]
+    //public class CafeUnitTests
+    //{
+    //    private MenuRepository _menuRepository = new MenuRepository();
+    //    private Menu _menu = new Menu();
 
-            content.NameOfMeal = "Sandwich";
+    //    [TestMethod]
+    //    public void SetNameOfMeal_ShoudlSetCorrectString()
+    //    {
+    //        Menu content = new Menu();
 
-            string expected = "Sandwich";
-            string actual = content.NameOfMeal;
+    //        content.NameOfMeal = "Sandwich";
 
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void SetMealNumber_ShouldSetCorrectInt()
-        {
-            Menu content = new Menu();
-            content.MealNumber = 1;
-            int expected = 1;
-            int actual = content.MealNumber;
-            Assert.AreEqual(expected, actual);
-        }
+    //        string expected = "Sandwich";
+    //        string actual = content.NameOfMeal;
+
+    //        Assert.AreEqual(expected, actual);
+    //    }
+        //[TestMethod]
+        //public void SetMealNumber_ShouldSetCorrectInt()
+        //{
+        //    Menu content = new Menu();
+        //    content.MealNumber = 1;
+        //    int expected = 1;
+        //    int actual = content.MealNumber;
+        //    Assert.AreEqual(expected, actual);
+        //}
+
     }
 }

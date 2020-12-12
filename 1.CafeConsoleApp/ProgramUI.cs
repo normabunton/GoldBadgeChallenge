@@ -12,6 +12,7 @@ namespace _1.CafeConsoleApp
         private readonly MenuRepository _menuItems = new MenuRepository();
         public void Run()                              
         {
+            SeeMenuItems();
             Menu();
         }        
         public void Menu()
@@ -53,7 +54,7 @@ namespace _1.CafeConsoleApp
         {
             Console.Clear();
             Console.WriteLine("Enter the Meal Number you would like to use:");
-            int mealNumber = Convert.ToInt32(Console.ReadLine());
+            string mealNumber = Console.ReadLine();
 
             Console.WriteLine("Enter the Name of the Meal:");
             string mealName = Console.ReadLine();
@@ -78,7 +79,7 @@ namespace _1.CafeConsoleApp
             DisplayAllMenuItems();
             //Get the MEalNumber
             Console.WriteLine("Enter the Meal Number you would like to Remove:");
-            int menuItem = Convert.ToInt32(Console.ReadLine());        
+            string menuItem = Console.ReadLine();        
             //Call the delete method
             bool wasDeleted = _menuItems.RemoveItemFromMenu(menuItem);
             //If the item was deleted say so
@@ -98,14 +99,15 @@ namespace _1.CafeConsoleApp
             foreach (Menu menuItems in listOfMenuItems)
             {
                 Console.WriteLine($"Meal Number: {menuItems.MealNumber}\n" +
-                                    $"Name Of Meal: {menuItems.NameOfMeal}");
+                                    $"Name Of Meal: {menuItems.NameOfMeal}" +
+                                    );
             }
         }
         private void SeeMenuItems()
         {
-            Menu Item1 = new Menu(1, "Sandwich", "Chicken Sandwich", "chicken, mayo, lettuce", 5.99);
-            Menu Item2 = new Menu(2, "Soup", "Vegetable Soup", "veggies, broth", 4.99);
-            Menu Item3 = new Menu(3, "Salad", "House Salad", "Lettuce, Tomatoes, Cheese, Dressing", 3.99);
+            Menu Item1 = new Menu("1", "Sandwich", "Chicken Sandwich", "chicken, mayo, lettuce", 5.99);
+            Menu Item2 = new Menu("2", "Soup", "Vegetable Soup", "veggies, broth", 4.99);
+            Menu Item3 = new Menu("3", "Salad", "House Salad", "Lettuce, Tomatoes, Cheese, Dressing", 3.99);
             _menuItems.AddItemToMenu(Item1);
             _menuItems.AddItemToMenu(Item2);
             _menuItems.AddItemToMenu(Item3);            
