@@ -77,12 +77,9 @@ namespace _1.CafeConsoleApp
         {
             Console.Clear();
             DisplayAllMenuItems();
-            //Get the MEalNumber
             Console.WriteLine("Enter the Meal Number you would like to Remove:");
             string menuItem = Console.ReadLine();        
-            //Call the delete method
             bool wasDeleted = _menuItems.RemoveItemFromMenu(menuItem);
-            //If the item was deleted say so
             if (wasDeleted)
             {
                 Console.WriteLine("The Menu Item was Successfully Removed.");
@@ -99,7 +96,9 @@ namespace _1.CafeConsoleApp
             foreach (Menu menuItems in listOfMenuItems)
             {
                 Console.WriteLine($"Meal Number: {menuItems.MealNumber}\n" +
-                                    $"Name Of Meal: {menuItems.NameOfMeal}" +
+                                    $"Name Of Meal: {menuItems.NameOfMeal}\n" +
+                                    $" Meal Description: {menuItems.MealDescription}\n" +
+                                    $"Ingredients: {menuItems.Ingredients}"
                                     );
             }
         }

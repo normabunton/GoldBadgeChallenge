@@ -8,16 +8,16 @@ namespace CafeRepository
 {
     public class MenuRepository
     {
-        public List<Menu> _menuItems = new List<Menu>();       //create new menu items
+        public List<Menu> _menuItems = new List<Menu>();       
         public void AddItemToMenu(Menu menuItem)
         {
             _menuItems.Add(menuItem);
         }
-        public List<Menu> GetMenuItems()                        //read list of all items on the cafe menu
+        public List<Menu> GetMenuItems()
         {
             return _menuItems;
         }
-        public bool RemoveItemFromMenu(string menuItem)        //delete menu items
+        public bool RemoveItemFromMenu(string menuItem)        
         {
             int initialCount = _menuItems.Count;
             Menu deletedItem = GetMenuItemByMealNumber(menuItem);
@@ -31,7 +31,7 @@ namespace CafeRepository
                 return false;
             }
         }
-        public Menu GetMenuItemByMealNumber(string mealNumber) //HelperMethod
+        public Menu GetMenuItemByMealNumber(string mealNumber) 
         {
             foreach (Menu menuItems in _menuItems)
             {
