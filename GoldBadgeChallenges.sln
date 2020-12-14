@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsRepository", "ClaimsR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsRepoTEST", "ClaimsRepoTEST\ClaimsRepoTEST.csproj", "{E4931289-0459-4F14-9DB4-5246BE8723D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsConsoleApp", "ClaimsConsoleApp\ClaimsConsoleApp.csproj", "{F7F54D89-47B7-499B-84FD-410BFFA561EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E4931289-0459-4F14-9DB4-5246BE8723D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4931289-0459-4F14-9DB4-5246BE8723D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4931289-0459-4F14-9DB4-5246BE8723D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F54D89-47B7-499B-84FD-410BFFA561EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F54D89-47B7-499B-84FD-410BFFA561EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F54D89-47B7-499B-84FD-410BFFA561EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F54D89-47B7-499B-84FD-410BFFA561EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

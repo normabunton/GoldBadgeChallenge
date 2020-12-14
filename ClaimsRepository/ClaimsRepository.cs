@@ -39,11 +39,11 @@ namespace ClaimsRepository
         }       
         public Claims GetClaimsByClaimId(string claimId)
         {
-            foreach(Claims claims in _claimsList)
+           foreach(Claims claims in _claimsList)
             {
-                if(claims.ClaimId == claimId)
-                {
-                    return claims;
+               if(claims.ClaimId == claimId)
+               {
+                   return claims;
                 }
             }
             return null;
