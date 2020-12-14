@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A718082-27C2-478E-8122-138A4EA62F4F}</ProjectGuid>
+    <ProjectGuid>{E4931289-0459-4F14-9DB4-5246BE8723D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cafe_UnitTestProject1</RootNamespace>
-    <AssemblyName>Cafe_UnitTestProject1</AssemblyName>
+    <RootNamespace>ClaimsRepoTEST</RootNamespace>
+    <AssemblyName>ClaimsRepoTEST</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,20 +49,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaimsRepoTEST.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MenuRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\1.CafeConsoleApp\CafeConsoleApp.csproj">
-      <Project>{eb47c433-f99f-4860-9b72-689ccf39a7ae}</Project>
-      <Name>CafeConsoleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CafeRepository\CafeRepository.csproj">
-      <Project>{826c715a-d0d1-401b-b5b7-0057db0aaf5e}</Project>
-      <Name>CafeRepository</Name>
+    <ProjectReference Include="..\ClaimsRepository\ClaimsRepository.csproj">
+      <Project>{2b9a88b2-90d3-45e4-8ed4-4e86a5b4b077}</Project>
+      <Name>ClaimsRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
