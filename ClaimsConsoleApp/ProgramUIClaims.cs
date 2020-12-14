@@ -78,7 +78,7 @@ namespace ClaimsConsoleApp
             Claims Claim1 = new Claims("1", ClaimType.Car, "Car Accident on 465", 400.00, "4/25/18", "4/27/18", true);
             Claims Claim2 = new Claims("2", ClaimType.Home, "House fire in Kitchen", 4000.00, "4/11/18", "4/12/18", true);
             Claims Claim3 = new Claims("3", ClaimType.Theft, "Stolen Pancakes", 4.00, "4/27/18", "6/01/18", false);
-            Queue<Claims>.Enqueue(Claim1);
+            _claimsList.AddClaimToList(Claim1);
             _claimsList.AddClaimToList(Claim2);
             _claimsList.AddClaimToList(Claim3);
         }
