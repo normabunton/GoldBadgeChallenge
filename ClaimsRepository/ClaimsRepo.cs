@@ -6,16 +6,27 @@ using System.Threading.Tasks;
 
 namespace ClaimsRepository
 {
-    class ClaimsRepository
+    public class ClaimsRepo
     {
-        public List<Claims> _claimsList = new List<Claims>();
+        public Queue<Claims> _claimsList = new Queue<Claims>();
         public void AddClaimToList(Claims claims)
         {
-            _claimsList.Add(claims);
+            _claimsList.Enqueue(claims);
         }
-        public List<Claims> GetClaims()
+        public Queue<Claims> GetClaims()
         {
             return _claimsList;
+        }
+        public void RemoveClaimFromQueue()
+        {
+            _claimsList.Dequeue();
+        }
+        public Queue<Claims> ClaimFromTopOfQueue
+        {
+            get
+            {
+                _claimsList.Peek();
+            }
         }
 
         public bool UpdateClaim(string originalClaim, Claims newClaims)
