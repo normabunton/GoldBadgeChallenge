@@ -7,9 +7,8 @@ namespace ClaimsRepoTEST
     [TestClass]
     public class ClaimsRepoTEST
     {
-
-        private ClaimsRepoTEST _claimsList = new Claims();
-        private readonly Claims _claimsList = new Claims();
+        private ClaimsRepository _claimsList = new ClaimsRepository();
+        private Claims _claimsList = new Claims();
 
         //[TestMethod]
         //public void GetClaimId_ShouldGetNotNull()
@@ -24,10 +23,9 @@ namespace ClaimsRepoTEST
         [TestMethod]
         public void AddClaimToClaimListTest()
         {
-            _claimsList.AddClaimToClaimListTest(_claimsList);
+            _claimsList.AddClaimToClaimList(_claimsList);
             int expected = 1;
             int actual = _claimsRepository.AddClaimToList().Count;
-
             Assert.AreEqual(expected, actual);
         }
     }

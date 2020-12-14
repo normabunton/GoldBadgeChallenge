@@ -51,6 +51,18 @@ namespace ClaimsConsoleApp
         }
         public void GetClaims()///ClaimsintheQueue
         {
+            Console.Clear();
+            List<Claims> claims = _claimsList.SeeClaims();
+            foreach (Claims claims in GetClaims)
+            {
+                Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
+                                  $"Type Of Claim:{claims.TypeOfClaim}\n" +
+                                  $"Description:{claims.Description}\n" +
+                                  $"Claim Amout:{claims.ClaimAmount}\n +" +
+                                  $"Date of Incident:{claims.DateOfClaim}\n" +
+                                  $"Date of Claim:{claims.DateOfClaim}\n" +
+                                  $"Is Claim Valid:{claims.IsValid}");
+            }
 
         }
         public void UpdateClaim()
@@ -59,13 +71,14 @@ namespace ClaimsConsoleApp
         }
         public void AddClaimToList()
         {
+            Console.Clear();
 
         }
         private void SeeClaims()
         {
-            Claims Claim1 = new Claims();
-            Claims Claim2 = new Claims();
-            Claims Claim3 = new Claims();
+            Claims Claim1 = new Claims("1", Car, "Car Accident on 465", 400.00, "4/25/18", "4/27/18", true);
+            Claims Claim2 = new Claims("2", Home, "House fire in Kitchen", 4000.00, "4/11/18", "4/12/18", true);
+            Claims Claim3 = new Claims("3", Theft, "Stolen Pancakes", 4.00, "4/27/18", "6/01/18", false);
             _claimsList.AddClaimToList(Claim1);
             _claimsList.AddClaimToList(Claim2);
             _claimsList.AddClaimToList(Claim3);

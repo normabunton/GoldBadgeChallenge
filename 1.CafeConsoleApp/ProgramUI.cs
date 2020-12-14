@@ -97,8 +97,9 @@ namespace _1.CafeConsoleApp
             {
                 Console.WriteLine($"Meal Number: {menuItems.MealNumber}\n" +
                                     $"Name Of Meal: {menuItems.NameOfMeal}\n" +
-                                    $" Meal Description: {menuItems.MealDescription}\n" +
-                                    $"Ingredients: {menuItems.Ingredients}"
+                                    $"Meal Description: {menuItems.MealDescription}\n" +
+                                    $"Ingredients: {menuItems.Ingredients}\n +" +
+                                    $"Price: {menuItems.Price}"
                                     );
             }
         }
