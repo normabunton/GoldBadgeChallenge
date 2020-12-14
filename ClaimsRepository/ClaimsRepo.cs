@@ -21,12 +21,9 @@ namespace ClaimsRepository
         {
             _claimsList.Dequeue();
         }
-        public Queue<Claims> ClaimFromTopOfQueue
+        public void ClaimFromTopOfQueue(Claims claims)
         {
-            get
-            {
-                _claimsList.Peek();
-            }
+            _claimsList.Peek(claims);
         }
 
         public bool UpdateClaim(string originalClaim, Claims newClaims)
