@@ -9,7 +9,7 @@ namespace ClaimsConsoleApp
 {
     class ProgramUIClaims
     {
-        private readonly ClaimsRepo claimsRepo = new ClaimsRepo();
+        private ClaimsRepo _claimsList = new ClaimsRepo();
         public void Run()
         {
             SeeClaims();
@@ -50,56 +50,77 @@ namespace ClaimsConsoleApp
                 Console.Clear();
             }
         }
-        public void GetClaims()///ClaimsintheQueue
-        {
-            Console.Clear();
-            Queue<Claims> claims = _claimsList.GetClaimId();
-            foreach (Claims claims in Queue<Claims>)
-            {
-                Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
-                                  $"Type Of Claim:{claims.TypeOfClaim}\n" +
-                                  $"Description:{claims.Description}\n" +
-                                  $"Claim Amout:{claims.ClaimAmount}\n +" +
-                                  $"Date of Incident:{claims.DateOfClaim}\n" +
-                                  $"Date of Claim:{claims.DateOfClaim}\n" +
-                                  $"Is Claim Valid:{claims.IsValid}");
-            }
-        }
-        public void UpdateClaim()
-        {
-            //RemoveClaimFromQueue after updated
-        }
-        public void AddClaimToList()
-        {
-            Console.Clear();
-            Console.WriteLine("Enter the Claim Id:");
-            string claimId = Console.ReadLine();
-            Console.WriteLine("Enter the Claim Type:");
-            //claimtype
-            Console.WriteLine("Enter the Claim Description:");
-            string description = Console.ReadLine();
-            Console.WriteLine("Amount of Damage");
-            double claimAmount = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Date of Accident");
-            string dateOfAccident = Console.ReadLine();
-            Console.WriteLine("Date of Claim");
-            string dateOfClaim = Console.ReadLine();
-            Console.WriteLine("Is this claim valid y/n");
-            bool isValid = Console.ReadLine();
+                public void GetClaims()///ClaimsintheQueue
+                {
+                     Queue<Claims> claims = _claimsList.GetClaims();
 
-            Claims newClaim = new Claims(claimId, claimType: ClaimType, description: description, claimAmount: claimAmount, dateOfIncident: dateOfAccident, dateOfClaim: dateOfClaim, isValid: isValid);
-            _claimsList.AddClaimToList(newClaim);
-            Console.WriteLine("You have added a new Claim to the Queue");
-            Console.ReadLine();
-        }
-        private void SeeClaims()
-        {
-            Claims Claim1 = new Claims("1", ClaimType.Car, "Car Accident on 465", 400.00, "4/25/18", "4/27/18", true);
-            Claims Claim2 = new Claims("2", ClaimType.Home, "House fire in Kitchen", 4000.00, "4/11/18", "4/12/18", true);
-            Claims Claim3 = new Claims("3", ClaimType.Theft, "Stolen Pancakes", 4.00, "4/27/18", "6/01/18", false);
-            _claimsList.AddClaimToList(Claim1);
-            _claimsList.AddClaimToList(Claim2);
-            _claimsList.AddClaimToList(Claim3);
-        }
+            foreach (Claims claimsRepository in claims)
+                    {
+                        Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
+                                          $"Type Of Claim:{claims.TypeOfClaim}\n" +
+                                          $"Description:{claims.Description}\n" +
+                                          $"Claim Amout:{claims.ClaimAmount}\n +" +
+                                          $"Date of Incident:{claims.DateOfIncident}\n" +
+                                          $"Date of Claim:{claims.DateOfClaim}\n" +
+                                          $"Is Claim Valid:{claims.IsValid}");
+                    }
+                }
+                public void UpdateClaim()
+                {
+                    //RemoveClaimFromQueue after updated
+                }
+                private void AddClaimToList()
+                {
+                    Console.Clear();
+                    Claims newClaim = new Claims();        
+                                
+                    Console.WriteLine("Enter the Claim Id:");
+                    newClaim.ClaimId = Console.ReadLine();
+
+                    Console.WriteLine("Enter the Claim Type Number:\n" +
+                                        "1.Auto\n" +
+                                        "2.Home\n" +
+                                        "3.Theft");
+                    string claimTypeAsString = Console.ReadLine();
+                    int claimAsInt = int.Parse(claimTypeAsString);
+                    newClaim.TypeOfClaim = (ClaimType)claimAsInt;
+                    
+
+                    Console.WriteLine("Enter the Claim Description:");
+                    newClaim.Description = Console.ReadLine();
+
+                    Console.WriteLine("Amount of Damage");
+                    string amountAsString = Console.ReadLine();
+                    newClaim.ClaimAmount = double.Parse(amountAsString);
+
+                    Console.WriteLine("Date of Incident");
+                    newClaim.DateOfIncident = Console.ReadLine();
+
+                    Console.WriteLine("Date of Claim");
+                    newClaim.DateOfClaim = Console.ReadLine();
+
+                    Console.WriteLine("Is this claim valid y/n");
+                    string isValidString = Console.ReadLine().ToLower();
+                    if (isValidString == "y")
+                    {
+                        newClaim.IsValid = true;
+                    }
+                         else
+                    {
+                        newClaim.IsValid = false;
+                    }                  
+                    _claimsList.AddClaimToList(newClaim);
+                    Console.WriteLine("You have added a new Claim to the Queue");
+                    Console.ReadLine();
+                }
+                private void SeeClaims()
+                {
+                    Claims Claim1 = new Claims("1", ClaimType.Car, "Car Accident on 465", 400.00, "4/25/18", "4/27/18", true);
+                    Claims Claim2 = new Claims("2", ClaimType.Home, "House fire in Kitchen", 4000.00, "4/11/18", "4/12/18", true);
+                    Claims Claim3 = new Claims("3", ClaimType.Theft, "Stolen Pancakes", 4.00, "4/27/18", "6/01/18", false);
+                    _claimsList.AddClaimToList(Claim1);
+                    _claimsList.AddClaimToList(Claim2);
+                    _claimsList.AddClaimToList(Claim3);
+                }
     }
 }
