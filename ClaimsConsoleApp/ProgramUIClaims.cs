@@ -52,9 +52,10 @@ namespace ClaimsConsoleApp
         }
                 public void GetClaims()///ClaimsintheQueue
                 {
+                    Console.Clear();
                      Queue<Claims> claims = _claimsList.GetClaims();
 
-            foreach (Claims claimsRepository in claims)
+                    foreach (Claims claims in claims)
                     {
                         Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
                                           $"Type Of Claim:{claims.TypeOfClaim}\n" +
@@ -67,7 +68,14 @@ namespace ClaimsConsoleApp
                 }
                 public void UpdateClaim()
                 {
-                    //RemoveClaimFromQueue after updated
+                    GetClaims();                    
+                    Console.WriteLine("Do you want to deal with this Claim Now? (y/n)");
+                    string oldClaims = Console.ReadLine();
+                    //if true (){ Console.WriteLine("Claim at the top of the Queue is: {0}", queue.Peek());  }display claim at top of queue
+
+                    //else if {}return to Claims
+                    //else RemoveClaimFromQueue after updated
+                    //newClaim.Dequeue();
                 }
                 private void AddClaimToList()
                 {
