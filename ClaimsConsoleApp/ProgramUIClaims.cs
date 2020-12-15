@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -66,17 +67,30 @@ namespace ClaimsConsoleApp
                                           $"Is Claim Valid:{claim.IsValid}");
                     }
                 }
-                public void UpdateClaim()
+                public void UpdateClaim ()
                 {
-                    GetClaims();                    
+                    Console.Clear();
+                    Claims updateClaim = new Claims();
+                    Console.WriteLine("Review the next item in the Queue: {0}",
+                    updateClaim.Peek());
                     Console.WriteLine("Do you want to deal with this Claim Now? (y/n)");
-                    string oldClaims = Console.ReadLine();
                     //if true (){ Console.WriteLine("Claim at the top of the Queue is: {0}", queue.Peek());  }display claim at top of queue
 
                     //else if {}return to Claims
                     //else RemoveClaimFromQueue after updated
-                    //newClaim.Dequeue();
-                }
+
+                    string oldClaims = Console.ReadLine();
+                    Console.WriteLine($"Claims Id:{updateClaim.ClaimId}\n" +
+                                  $"Type Of Claim:{updateClaim.TypeOfClaim}\n" +
+                                  $"Description:{updateClaim.Description}\n" +
+                                  $"Claim Amout:{updateClaim.ClaimAmount}\n +" +
+                                  $"Date of Incident:{updateClaim.DateOfIncident}\n" +
+                                  $"Date of Claim:{updateClaim.DateOfClaim}\n" +
+                                  $"Is Claim Valid:{updateClaim.IsValid}");
+
+                    Console.WriteLine("You have updated this Claim");
+                    //updateClaim.Dequeue();
+        }
                 private void AddClaimToList()
                 {
                     Console.Clear();
