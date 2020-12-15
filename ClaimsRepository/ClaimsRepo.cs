@@ -21,14 +21,14 @@ namespace ClaimsRepository
         {
             _claimsList.Dequeue();
         }
-        public void ClaimFromTopOfQueue(Claims claims)
+        public Claims ClaimFromTopOfQueue()
         {
-            _claimsList.Peek(claims);
+           return _claimsList.Peek();
         }
 
-        public bool UpdateClaim(string originalClaim, Claims newClaims)
+        public bool UpdateClaim( Claims newClaims, string id)
         {
-            Claims oldClaims = GetClaimsByClaimId(originalClaim);
+            Claims oldClaims = GetClaimsByClaimId(id);
             if (oldClaims != null)
             {
                 oldClaims.ClaimId = newClaims.ClaimId;

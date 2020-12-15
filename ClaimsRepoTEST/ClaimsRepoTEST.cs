@@ -1,14 +1,21 @@
 ﻿using ClaimsRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace ClaimsRepoTEST
 {
     [TestClass]
     public class ClaimsRepoTEST
     {
-        private ClaimsRepo _claimsList = new ClaimsRepo();
+        private ClaimsRepo _claimsList;
         private Claims _claims = new Claims();
+        [TestInitialize]
+        public void Arrange()
+        {
+            _claimsList = new ClaimsRepo();
+        //    _claimsList = new Claims();
+        }
         [TestMethod]
         public void GetClaimId_ShouldGetNotNull()
         {
@@ -28,29 +35,30 @@ namespace ClaimsRepoTEST
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void UpdateClaim_ShouldReturnTrue()
+        [DataRow(1)]
+        public void UpdateClaim_ShouldReturnTrue(string id)
         {
             Claims newClaims = new Claims("1", ClaimType.Car, "Car Accident on 465", 400.00, "4 / 25 / 18", "4 / 27 / 18", true);
-            bool updateClaim = _claimsList.UpdateClaim("2", newClaims);
-            Assert.IsTrue(updateClaim);
+            _claimsList.UpdateClaim(newClaims, id);
+            //Queue<Claims> queue = _claimsList.GetClaims();
+
+            // bool updateClaim = _claimsList.UpdateClaim("2", newClaims);
+            // Assert.IsTrue(updateClaim);
         }
         [TestMethod]
         public void RemoveClaimFromQueue()
         {
             Claims Claim1 = new Claims("1", ClaimType.Car, "Car Accident on 465", 400.00, "4 / 25 / 18", "4 / 27 / 18", true);
+            _claimsList.AddClaimToList(Claim1);
             Queue<Claims> queue = _claimsList.GetClaims();
-            queue.Add(Claim1);
-            _claimsList.RemoveClaimFromQueue(Claim1.ClaimId);
-            bool claimContainsItem = queue.Contains(Claim1);
-            Assert.IsFalse(claimContainsItem);
+            Assert.AreEqual(Claim1, queue.Dequeue());
         }
         [TestMethod]
         public void ClaimFromTopOfQueue_ShouldGetNotNull()
         {
             Claims claim = new Claims();
-            claim.ClaimId = "1";
-            ClaimsRepo repository = new ClaimsRepo();
-            repository.ClaimFromTopOfQueue(_claims, claim);
+            Queue<Claims> queue = _claimsList.GetClaims();
+            queue.ClaimFromTopOfQueue();
             Claims contentFromDirectory = repository.GetClaimsByClaimId("1");
             Assert.IsNotNull(contentFromDirectory);
         }

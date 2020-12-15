@@ -55,15 +55,15 @@ namespace ClaimsConsoleApp
                     Console.Clear();
                      Queue<Claims> claims = _claimsList.GetClaims();
 
-                    foreach (Claims claims in claims)
+                    foreach (Claims claim in claims)
                     {
-                        Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
-                                          $"Type Of Claim:{claims.TypeOfClaim}\n" +
-                                          $"Description:{claims.Description}\n" +
-                                          $"Claim Amout:{claims.ClaimAmount}\n +" +
-                                          $"Date of Incident:{claims.DateOfIncident}\n" +
-                                          $"Date of Claim:{claims.DateOfClaim}\n" +
-                                          $"Is Claim Valid:{claims.IsValid}");
+                        Console.WriteLine($"Claims Id:{claim.ClaimId}\n" +
+                                          $"Type Of Claim:{claim.TypeOfClaim}\n" +
+                                          $"Description:{claim.Description}\n" +
+                                          $"Claim Amout:{claim.ClaimAmount}\n +" +
+                                          $"Date of Incident:{claim.DateOfIncident}\n" +
+                                          $"Date of Claim:{claim.DateOfClaim}\n" +
+                                          $"Is Claim Valid:{claim.IsValid}");
                     }
                 }
                 public void UpdateClaim()
