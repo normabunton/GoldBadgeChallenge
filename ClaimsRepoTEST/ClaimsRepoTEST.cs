@@ -44,8 +44,15 @@ namespace ClaimsRepoTEST
             bool claimContainsItem = queue.Contains(Claim1);
             Assert.IsFalse(claimContainsItem);
         }
-        
-        
-        //GetClaimFromTopOfQueue
+        [TestMethod]
+        public void ClaimFromTopOfQueue_ShouldGetNotNull()
+        {
+            Claims claim = new Claims();
+            claim.ClaimId = "1";
+            ClaimsRepo repository = new ClaimsRepo();
+            repository.ClaimFromTopOfQueue(_claims, claim);
+            Claims contentFromDirectory = repository.GetClaimsByClaimId("1");
+            Assert.IsNotNull(contentFromDirectory);
+        }
     }
 }

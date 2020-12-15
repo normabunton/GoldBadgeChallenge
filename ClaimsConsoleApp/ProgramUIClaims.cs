@@ -9,6 +9,7 @@ namespace ClaimsConsoleApp
 {
     class ProgramUIClaims
     {
+        private readonly ClaimsRepo claimsRepo = new ClaimsRepo();
         public void Run()
         {
             SeeClaims();
@@ -52,7 +53,7 @@ namespace ClaimsConsoleApp
         public void GetClaims()///ClaimsintheQueue
         {
             Console.Clear();
-            Queue<Claims> claims = Queue<Claims>.SeeClaims();
+            Queue<Claims> claims = _claimsList.GetClaimId();
             foreach (Claims claims in Queue<Claims>)
             {
                 Console.WriteLine($"Claims Id:{claims.ClaimId}\n" +
@@ -71,7 +72,25 @@ namespace ClaimsConsoleApp
         public void AddClaimToList()
         {
             Console.Clear();
+            Console.WriteLine("Enter the Claim Id:");
+            string claimId = Console.ReadLine();
+            Console.WriteLine("Enter the Claim Type:");
+            //claimtype
+            Console.WriteLine("Enter the Claim Description:");
+            string description = Console.ReadLine();
+            Console.WriteLine("Amount of Damage");
+            double claimAmount = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Date of Accident");
+            string dateOfAccident = Console.ReadLine();
+            Console.WriteLine("Date of Claim");
+            string dateOfClaim = Console.ReadLine();
+            Console.WriteLine("Is this claim valid y/n");
+            bool isValid = Console.ReadLine();
 
+            Claims newClaim = new Claims(claimId, claimType: ClaimType, description: description, claimAmount: claimAmount, dateOfIncident: dateOfAccident, dateOfClaim: dateOfClaim, isValid: isValid);
+            _claimsList.AddClaimToList(newClaim);
+            Console.WriteLine("You have added a new Claim to the Queue");
+            Console.ReadLine();
         }
         private void SeeClaims()
         {
