@@ -75,7 +75,8 @@ namespace ClaimsConsoleApp
                     ////updateClaim.Peek());
                     ////Console.WriteLine("Do you want to deal with this Claim Now? (y/n)");
                     ////if true (){ Console.WriteLine("Claim at the top of the Queue is: {0}", queue.Peek());  }display claim at top of queue
-                    ////else if {}return to Claims
+                    ////else if {}return to _claimsList
+                    ///
                     //string updateClaim = Console.ReadLine();
                     //Console.WriteLine($"Claims Id:{updateClaim.ClaimId}\n" +
                     //              $"Type Of Claim:{updateClaim.TypeOfClaim}\n" +
@@ -106,7 +107,6 @@ namespace ClaimsConsoleApp
                     Console.WriteLine("Amount of Damage");
                     string amountAsString = Console.ReadLine();
                     newClaim.ClaimAmount = double.Parse(amountAsString);
-
                     Console.WriteLine("Date of Incident");
                     newClaim.DateOfIncident = DateTime.Parse(Console.ReadLine());
                     Console.WriteLine("Date of Claim");

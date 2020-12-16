@@ -16,6 +16,9 @@ namespace ClaimsRepository
         public Queue<Claims> GetClaims()
         {
             return _claimsList;
+
+
+
         }
         public void RemoveClaimFromQueue()
         {
