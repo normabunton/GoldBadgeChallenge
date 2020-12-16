@@ -38,8 +38,8 @@ namespace ClaimsRepoTEST
         [TestMethod]
         public void UpdateClaim_ShouldReturnTrue()
         {
-            Claims newClaims = new Claims(3, ClaimType.Theft, "Stolen Pancakes", 4.00, new DateTime(2018, 06, 01), new DateTime(2018, 06, 20));
-            bool updated = _claimsList.UpdateClaim(1, newClaims);
+            Claims newClaims = new Claims(3, ClaimType.Theft, "Stolen Pancakes", 4.00, new DateTime(2018, 06, 05), new DateTime(2018, 06, 20));
+            bool updated = _claimsList.UpdateClaim(3, newClaims);
             Assert.IsTrue(updated);
         }
         [TestMethod]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace ClaimsRepository
         public void AddClaimToList(Claims claims)
         {
             _claimsList.Enqueue(claims);
+
         }
+
         public Queue<Claims> GetClaims()
         {
             return _claimsList;
-
-
-
         }
+    
         public void RemoveClaimFromQueue()
         {
             _claimsList.Dequeue();
