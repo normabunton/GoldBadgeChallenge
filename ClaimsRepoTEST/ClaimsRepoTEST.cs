@@ -36,15 +36,10 @@ namespace ClaimsRepoTEST
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        //[DataRow(1)]
         public void UpdateClaim_ShouldReturnTrue()
         {
             Claims newClaims = new Claims(3, ClaimType.Theft, "Stolen Pancakes", 4.00, new DateTime(2018, 06, 01), new DateTime(2018, 06, 20));
             bool updated = _claimsList.UpdateClaim(1, newClaims);
-            
-            //Queue<Claims> queue = _claimsList.GetClaims();
-
-            // bool updateClaim = _claimsList.UpdateClaim("2", newClaims);
             Assert.IsTrue(updated);
         }
         [TestMethod]
@@ -55,21 +50,11 @@ namespace ClaimsRepoTEST
             Queue<Claims> queue = _claimsList.GetClaims();
             Assert.AreEqual(Claim1, queue.Dequeue());
         }
-
         [TestMethod]
         public void GetClaimFromTopOfQueue_IsNotNull()
         {
             Claims claims = _claimsList.ClaimFromTopOfQueue();
             Assert.IsNotNull(claims);
         }
-        //[TestMethod]
-        //public void ClaimFromTopOfQueue_ShouldGetNotNull()
-        //{
-        //    Claims claim = new Claims();
-        //    Queue<Claims> queue = _claimsList.GetClaims();
-        //    queue.ClaimFromTopOfQueue();
-        //    Claims contentFromDirectory = repository.GetClaimsByClaimId("1");
-        //    Assert.IsNotNull(contentFromDirectory);
-        //}
     }
 }
