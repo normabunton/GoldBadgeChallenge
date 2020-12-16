@@ -9,9 +9,9 @@ namespace BadgesRepository
     public class Badges
     {
         public int BadgeId { get; set; }
-        public string DoorName { get; set; }
+        public List<string> DoorName { get; set; }        
     public Badges() { }
-    public Badges(int badgeId, string doorName)
+    public Badges(int badgeId, List<string> doorName)
     {
             BadgeId = badgeId;
             DoorName = doorName;

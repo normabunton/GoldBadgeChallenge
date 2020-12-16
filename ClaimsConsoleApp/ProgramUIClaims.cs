@@ -66,8 +66,7 @@ namespace ClaimsConsoleApp
             DisplayClaims(_claimsRepo.ClaimFromTopOfQueue());
             Console.WriteLine("Do you want to Deal with the Next Claim in the Queue?(y/n)");
             string input = Console.ReadLine();
-            while(true)
-            {
+            
                 switch (input.ToLower())
                 {
                     case "y":
@@ -77,7 +76,7 @@ namespace ClaimsConsoleApp
                         return;
                         
                 }
-            }
+            
         }
         public void GetClaims()
         {

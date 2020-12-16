@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace BadgesRepository
 {
-    class BadgesRepository
+    public class BadgesRepository
     {
-        private static Dictionary<string, object> repository = new Dictionary<string, object>();
+        private Dictionary<int, List<string> >repository = new Dictionary<int, List<string>>();
 
-        private static void Add(string BadgeID, object Badge)
+        public void Add(int badgeID, List<string> doorName) //createnewBadge
         {
 
         }
-        //Create a dictionary of badges.
-        //The key for the dictionary will be the BadgeID.
-        //The value for the dictionary will be the Badge.
+        public Dictionary<int, List<string>> ListBadgeNumbersAndDoorAccess()
+        {
 
+        }
+        public void UpdateDoorsOnExistingBadge (int badgeID, List<string> newDoorName)
+        {
 
-        //CRUD
-//        create a new badge
-//update doors on an existing badge.
-//delete all doors from an existing badge.
-//show a list with all badge numbers and door access
+        }
+        public List<string> GetBadgeById( int badgeId)
+        {
+            //if checking to see if badge is in dictionary //methods with getting the key ie. int ofbadge return badgeId
+        }
     }
 }
