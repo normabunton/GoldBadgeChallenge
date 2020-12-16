@@ -34,9 +34,7 @@ namespace ClaimsRepository
                 {
                     return false;
                 }
-
             }
-
         }
         public Claims() { }
     public Claims (int claimId, ClaimType typeOfClaim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
