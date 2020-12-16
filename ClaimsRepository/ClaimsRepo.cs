@@ -26,9 +26,9 @@ namespace ClaimsRepository
            return _claimsList.Peek();
         }
 
-        public bool UpdateClaim( Claims newClaims, string id)
+        public bool UpdateClaim( int originalClaims, Claims newClaims)
         {
-            Claims oldClaims = GetClaimsByClaimId(id);
+            Claims oldClaims = GetClaimsByClaimId(originalClaims);
             if (oldClaims != null)
             {
                 oldClaims.ClaimId = newClaims.ClaimId;
@@ -37,7 +37,7 @@ namespace ClaimsRepository
                 oldClaims.ClaimAmount = newClaims.ClaimAmount;
                 oldClaims.DateOfIncident = newClaims.DateOfIncident;
                 oldClaims.DateOfClaim = newClaims.DateOfClaim;
-                oldClaims.IsValid = newClaims.IsValid;
+             
                 return true;
             }
             else
@@ -45,7 +45,7 @@ namespace ClaimsRepository
                 return false;
             }
         }       
-        public Claims GetClaimsByClaimId(string claimId)
+        public Claims GetClaimsByClaimId(int claimId)
         {
            foreach(Claims claims in _claimsList)
             {

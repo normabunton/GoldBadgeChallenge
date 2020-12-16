@@ -14,23 +14,40 @@ namespace ClaimsRepository
     }
     public class Claims
     { 
-        public string ClaimId { get; set; } 
+        public int ClaimId { get; set; } 
         public ClaimType TypeOfClaim { get; set; }
         public string Description { get; set; }
         public double ClaimAmount { get; set; }
-        public string DateOfIncident { get; set; }
-        public string DateOfClaim { get; set; }
-        public bool IsValid { get; set; }
-    public Claims() { }
-    public Claims(string claimId, ClaimType claimType, string description, double claimAmount, string dateOfIncident, string dateOfClaim, bool isValid)
+        public DateTime DateOfIncident { get; set; }
+        public DateTime DateOfClaim { get; set; }
+        public bool IsValid
+        {
+            get
+            {
+                TimeSpan claimTime = DateOfClaim - DateOfIncident;
+
+                if (claimTime.TotalDays <= 30)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+        }
+
+        public Claims() { }
+    public Claims (int claimId, ClaimType typeOfClaim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim)
     {
             ClaimId = claimId;
-            TypeOfClaim = claimType;
+            TypeOfClaim = typeOfClaim;
             Description = description;
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncident;
-            DateOfClaim = dateOfClaim;
-            IsValid = isValid;
+            DateOfClaim = dateOfClaim;           
     }
 }
 }
