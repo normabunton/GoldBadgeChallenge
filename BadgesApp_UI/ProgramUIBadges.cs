@@ -52,55 +52,54 @@ namespace BadgesApp_UI
         }
         public void CreateNewBadge()
         {
-                    Console.WriteLine("What is the number on the badge to Create: (ie.12345)" +
-                                        "List a door that this Badge needs access to: (ie: A5)" +
-                                        "Any other doors(y/n)?:"); // y  ///repeats above line again and this line in response
-                    string input = Console.ReadLine();
+            Console.WriteLine("What is the number on the badge to Create: (ie.12345)\n");
+            int badgeId = int.Parse(Console.ReadLine());
+            Console.WriteLine("List a Door this Badge needs access to:");
+            string doorName = Console.ReadLine();
+            Console.WriteLine("Any other Doors? (y/n)");
+                   Console.ReadLine();
+            string input = Console.ReadLine();
                     switch (input.ToLower())
                         {
-                        case "y":
-                            
+                        case "y":                            
                             break;
                         case "n":
                             return;                
                         }
-        }
+        }        
         public void UpdateBadge()
         {
             Console.WriteLine("What is the badge number you would like to update ?");
                 int BadgeId = int.Parse(Console.ReadLine());
+            //Console.WriteLine(result"12345 "has access to doors" A5 & A7.");
 
-            //12345 has access to doors A5 & A7.
             Console.WriteLine("What would you like to do?" +
                                 "1.Remove a door?" +
                                 "2.Add a door?");
+            string input = Console.ReadLine();
 
-            //> 1
-            Console.WriteLine("Which door would you like to remove?");
-            //A5
+            Console.WriteLine("Which door would you like to remove?"); 
+
             Console.WriteLine("Door removed.");
 
-            //12345 has access to door A7.
-            ///DeleteAllDoorsFromExistingBadge.
+            Console.WriteLine("12345 has access to door A7.");
+
+            Console.WriteLine("DeleteAllDoorsFromExistingBadge.");
+
             Console.WriteLine("The door(s) have been Removed from Access to this Badge.");
         }
-
-            public void DisplayBadges(Badges content)
-            {
-            Console.WriteLine($"{ content.BadgeId, -15} { content.DoorName, -10}");
-            }
-            public void ListBadges()
-            {
+        public void ListBadges()
+        {
             Console.Clear();
             Console.WriteLine("Badge Id #\t\t Door Access\t\t");
-            List<Badges> badges = _badgesRepository.ListBadges();
-            {
-                foreach (Badges badge in badges)
+            Dictionary<int, List<string>> badges = _badgesRepository.ListBadges();
+
+                foreach (KeyValuePair<int, List<string>> badge in badges)
                 {
-                    DisplayBadges(badge);
+                Console.WriteLine       //($"{badge.Key}, {badge.Value}");
+                    ($"Key = {0}, Value = {1}, badge.Key, badge.Value");
                 }
-            }
-            }        
+        }
         private void SeeBadges()
         {
             Badges badge1 = new Badges(123, new List<string> { "A1", "A2" });

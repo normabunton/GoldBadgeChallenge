@@ -9,6 +9,7 @@ namespace BadgesRepository
     public class BadgesRepo
     {
         private Dictionary<int, List<string>>repository = new Dictionary<int, List<string>>();
+        public object Value;
 
         public void Add(int badgeID, List<string> doorName) 
         {
