@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BadgesRepository\BadgesRepository.csproj">
+      <Project>{d51a1056-f4f5-484c-8c82-35a3b982d315}</Project>
+      <Name>BadgesRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

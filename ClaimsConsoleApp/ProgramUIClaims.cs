@@ -73,16 +73,13 @@ namespace ClaimsConsoleApp
                         _claimsRepo.RemoveClaimFromQueue();
                         break;
                     case "n":
-                        return;
-                        
-                }
-            
+                        return;                        
+                }            
         }
         public void GetClaims()
         {
             Console.Clear();
             Console.WriteLine("ClaimId\t\t Type\t\t Description\t\t Amount\t\t DateOfAccident\t\t DateOfClaim\t\t IsValid\t\t");
-
             Queue<Claims> claims = _claimsRepo.GetClaims();
             {
                 foreach (Claims claim in claims)
@@ -90,22 +87,7 @@ namespace ClaimsConsoleApp
                     DisplayClaims(claim);
                 }
             }
-        }
-        ///trying to make rows and columns
-        //if (_claimsList.Count == 1000)
-        //{
-        //    DataTable dataTable = new DataTable();
-        //    dataTable.Columns.Add("Log");
-        //    foreach (var log in _claimsList)
-        //    {
-        //        DataRow dr = dataTable.NewRow();
-        //        dr["Log"] = log;
-        //        dataTable.Rows.Add(dr);
-        //    }
-        //    _claimsList.Clear();
-        //    SendBulkData(dataTable);
-        //}
-
+        }       
         private ClaimType GetClaimType()
         {
             Console.WriteLine("Enter the Claim Type: \n" +
@@ -116,22 +98,16 @@ namespace ClaimsConsoleApp
             while (true)
             {
                 int claimString = int.Parse(Console.ReadLine());
-
                 if (claimString >= 1 && claimString <= 3)
                 {
                     ClaimType claimType = (ClaimType)claimString;
                     return claimType;
                 }
-
                 Console.WriteLine("Invalid selection. Please try again.");
             }
         }
-
-
         public void UpdateClaim()
-        {
-            
-            
+        {          
             Console.WriteLine("Enter the Claim Id:");
             int claimId = int.Parse(Console.ReadLine());
             ClaimType claimType = GetClaimType();
@@ -145,28 +121,7 @@ namespace ClaimsConsoleApp
             Console.WriteLine("Date of Claim:(yyyy/mm/dd)");
             DateTime dateOfClaim = DateTime.Parse(Console.ReadLine());
             Claims updatedClaim = new Claims(claimId, claimType, description, claimAmount, dateOfIncident, dateOfClaim);
-
             _claimsRepo.UpdateClaim(updatedClaim.ClaimId, updatedClaim);
-
-            //Console.Clear();
-            //Claims updateClaim = new Claims();
-            //Console.WriteLine("Review the next item in the Queue: {0}",
-            ////updateClaim.Peek());
-            ////Console.WriteLine("Do you want to deal with this Claim Now? (y/n)");
-            ////if true (){ Console.WriteLine("Claim at the top of the Queue is: {0}", queue.Peek());  }display claim at top of queue
-            ////else if {}return to _claimsList
-            ///
-            //string updateClaim = Console.ReadLine();
-            //Console.WriteLine($"Claims Id:{updateClaim.ClaimId}\n" +
-            //              $"Type Of Claim:{updateClaim.TypeOfClaim}\n" +
-            //              $"Description:{updateClaim.Description}\n" +
-            //              $"Claim Amout:{updateClaim.ClaimAmount}\n +" +
-            //              $"Date of Incident:{updateClaim.DateOfIncident}\n" +
-            //              $"Date of Claim:{updateClaim.DateOfClaim}\n" +
-            //              $"Is Claim Valid:{updateClaim.IsValid}");
-
-            //Console.WriteLine("You have updated this Claim");
-            ////updateClaim.Dequeue();
         }
         private void AddClaimToList()
         {
