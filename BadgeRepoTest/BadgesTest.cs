@@ -1,28 +1,38 @@
 ﻿using BadgesRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BadgeRepoTest
 {
-//    [TestClass]
-//    public class BadgesTest
-//    {
-//        private int BadgeId;
+    [TestClass]
+    public class badgestest
+    {
+        private int badgeid;
 
-//        [TestMethod]
-//        //public void GetBadgeById_ShouldGetNotNull()
-//        //{
-//        //    BadgesTest badge = new BadgesTest();
-//        //    badge.BadgeId = 123;
-//        //    BadgesRepo repository = new BadgesRepo();
-//        //    repository.Add(badge);
-//        //    BadgesTest contentFromDirectory = repository.GetBadgeById(123);
-//        //    Assert.IsNotNull(contentFromDirectory);
-//        //}
+        [TestMethod]
+        public void getbadgebyid_shouldgetnotnull()
+        {
+            badgestest badge = new badgestest();
+            badge.badgeid = 123;
+            Dictionary<int, string> Badges = new Dictionary<int, string>();
+            Assert.IsNotNull(Badges);
+        }
+        [TestMethod]
+        public void AddBadgeToList()
+        {
+            //var Badges = new Dictionary<int, string>();
+            //Badges.Add(123);
+            //int expected = 1;
+            //int count = Dictionary<int, string>.Count;
+            //int actual = count;
+            //Assert.AreEqual(expected, actual);
+        }
+        ////Add
+        ////ListBadges
+        ////UpdateBadge
 
-////Add
-////ListBadges
-////UpdateBadge
-
-//    }
+        //    }
+    }
 }

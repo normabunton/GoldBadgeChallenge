@@ -96,8 +96,8 @@ namespace BadgesApp_UI
 
                 foreach (KeyValuePair<int, List<string>> badge in badges)
                 {
-                Console.WriteLine       ($"{badge.Key}, {badge.Value}");
-                    //($"badge.Key = {0}, doorName.Value = {1}, badge.Key, badge.Value");
+                Console.WriteLine // ($"{badge.Key}, {badge.Value}");
+                    ($"Key = {0}, Value = {1}, badge.Key, badge.Value");
                 }
         }
         private void SeeBadges()
