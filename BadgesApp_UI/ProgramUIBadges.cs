@@ -71,22 +71,24 @@ namespace BadgesApp_UI
         {
             Console.WriteLine("What is the badge number you would like to update ?");
                 int BadgeId = int.Parse(Console.ReadLine());
-            //Console.WriteLine(result"12345 "has access to doors" A5 & A7.");
-
-            Console.WriteLine("What would you like to do?" +
-                                "1.Remove a door?" +
+            Console.WriteLine("What would you like to do?\n" +
+                                "1.Remove a door?\n" +
                                 "2.Add a door?");
             string input = Console.ReadLine();
+            //Console.WriteLine(result"12345 "has access to doors" A5 & A7.");
 
-            Console.WriteLine("Which door would you like to remove?"); 
+            Console.WriteLine("Which door would you like to remove?");
+            Console.ReadLine();
 
-            Console.WriteLine("Door removed.");
+            Console.WriteLine("Door was removed.");
+            Console.Clear();
 
             Console.WriteLine("12345 has access to door A7.");
 
             Console.WriteLine("DeleteAllDoorsFromExistingBadge.");
 
             Console.WriteLine("The door(s) have been Removed from Access to this Badge.");
+            Console.Clear();
         }
         public void ListBadges()
         {
