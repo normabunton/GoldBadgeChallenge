@@ -51,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClaimsConsoleApp\ClaimsConsoleApp.csproj">
-      <Project>{f7f54d89-47b7-499b-84fd-410bffa561eb}</Project>
-      <Name>ClaimsConsoleApp</Name>
+    <ProjectReference Include="..\CafeRepository\CafeRepository.csproj">
+      <Project>{826c715a-d0d1-401b-b5b7-0057db0aaf5e}</Project>
+      <Name>CafeRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClaimsRepository\ClaimsRepository.csproj">
       <Project>{2b9a88b2-90d3-45e4-8ed4-4e86a5b4b077}</Project>

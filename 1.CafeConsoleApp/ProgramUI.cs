@@ -112,5 +112,9 @@ namespace _1.CafeConsoleApp
             _menuItems.AddItemToMenu(Item2);
             _menuItems.AddItemToMenu(Item3);            
         }
+
+        private class MenuRepository
+        {
+        }
     }
 }
