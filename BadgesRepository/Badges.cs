@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadgesRepository
+namespace BadgeRepoTest
 {    
     public class Badges
     {
@@ -16,5 +16,9 @@ namespace BadgesRepository
             BadgeId = badgeId;
             DoorName = doorName;
     }
-}
+
+        public Badges(int v1, string v2)
+        {
+        }
+    }
 }

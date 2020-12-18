@@ -1,4 +1,4 @@
-﻿using BadgesRepository;
+﻿using BadgeRepoTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ namespace BadgeRepoTest
     public class badgestest
     {
         private int badgeid;
+        private object badgesTest;
 
         [TestMethod]
         public void getbadgebyid_shouldgetnotnull()
@@ -22,17 +23,19 @@ namespace BadgeRepoTest
         [TestMethod]
         public void AddBadgeToList()
         {
-            //var Badges = new Dictionary<int, string>();
-            //Badges.Add(123);
-            //int expected = 1;
-            //int count = Dictionary<int, string>.Count;
-            //int actual = count;
-            //Assert.AreEqual(expected, actual);
+           
         }
-        ////Add
-        ////ListBadges
-        ////UpdateBadge
+        [TestMethod]
+        public void ListBadges()
+        {
 
-        //    }
+        }
+        [TestMethod]
+        public void UpdateBadge_ShouldReturnTrue()
+        {
+            List<string> doorName = null;
+            Badges newBadges = new Badges(badgeid, doorName);
+            bool updated = Dictionary<int, string>();
+        }       
     }
 }

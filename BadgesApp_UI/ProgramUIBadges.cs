@@ -1,4 +1,4 @@
-﻿using BadgesRepository;
+﻿using BadgeRepoTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,16 +98,6 @@ namespace BadgesApp_UI
                     break;
                 
             }
-            //Console.WriteLine(result"12345 "has access to doors" A5 & A7.");
-
-            Console.WriteLine("Door was removed.");
-            Console.Clear();
-
-            Console.WriteLine("12345 has access to door A7.");
-
-            Console.WriteLine("DeleteAllDoorsFromExistingBadge.");
-
-            Console.WriteLine("The door(s) have been Removed from Access to this Badge.");
             Console.Clear();
         }
         public void AddDoor(int badgeId, List<string> doors)
