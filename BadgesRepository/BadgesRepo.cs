@@ -19,9 +19,9 @@ namespace BadgesRepository
         {
             return repository;
         }
-        public void UpdateBadge (int originalBadges, List<string> newBadges)            
+        public void UpdateBadge (int badgeId, List<string> newDoors)            
         {
-            repository[originalBadges] = newBadges;            
+            repository[badgeId] = newDoors;            
         }
         public List<string> GetBadgeById( int badgeId)
         {
