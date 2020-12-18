@@ -30,12 +30,6 @@ namespace BadgeRepoTest
         {
 
         }
-        [TestMethod]
-        public void UpdateBadge_ShouldReturnTrue()
-        {
-            List<string> doorName = null;
-            Badges newBadges = new Badges(badgeid, doorName);
-            bool updated = Dictionary<int, string>();
-        }       
+
     }
 }
