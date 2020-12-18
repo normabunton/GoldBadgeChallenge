@@ -74,7 +74,6 @@ namespace BadgesApp_UI
                 {
                     doorInput = false;
                 }
-
             }
             Badges newBadge = new Badges(badgeId, doors);
             _badgesRepository.Add(newBadge.BadgeId, newBadge.DoorName);
@@ -84,14 +83,22 @@ namespace BadgesApp_UI
         {
             Console.WriteLine("What is the badge number you would like to update ?");
             int BadgeId = int.Parse(Console.ReadLine());
+            List<string> doors = _badgesRepository.GetBadgeById(BadgeId);
             Console.WriteLine("What would you like to do?\n" +
                                 "1.Remove a door?\n" +
                                 "2.Add a door?");
             string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    DeleteDoor(BadgeId, doors);
+                    break;
+                case "2":
+                    AddDoor(BadgeId, doors);
+                    break;
+                
+            }
             //Console.WriteLine(result"12345 "has access to doors" A5 & A7.");
-
-            Console.WriteLine("Which door would you like to remove?");
-            Console.ReadLine();
 
             Console.WriteLine("Door was removed.");
             Console.Clear();
